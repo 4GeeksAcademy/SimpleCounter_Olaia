@@ -1,13 +1,23 @@
-//import react into the bundle
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react';
+import ReactDOM from 'react-dom';
+// Include bootstrap npm library into the bundle
+import SimpleCounter from "./component/home"
 
-// include your styles into the webpack bundle
-import "../styles/index.css";
+// Include your index.scss file into the bundle
+import '../styles/index.css';
 
-//import your own components
-import Home from "./component/home.jsx";
 
-//render your react application
-ReactDOM.createRoot(document.getElementById('app')).render(<Home/>);
+let contador = 0;
 
+
+setInterval(() => {
+    const cuatro = Math.floor(contador / 1000);
+    const tres = Math.floor(contador / 100);
+    const dos = Math.floor(contador / 10);
+    const uno = Math.floor(contador / 1);
+    contador++;
+    
+       ReactDOM.render(
+         <SimpleCounter digitoUno={uno} digitoDos={dos} digitoTres={tres} digitoCuatro={cuatro} />, document.getElementById('app')) 
+  
+}, 1000);
