@@ -11,6 +11,8 @@ let contador = 0;
 
 
 setInterval(() => {
+    const seis = Math.floor(contador / 100000);
+    const cinco = Math.floor(contador/10000)
     const cuatro = Math.floor(contador / 1000);
     const tres = Math.floor(contador / 100);
     const dos = Math.floor(contador / 10);
@@ -18,6 +20,6 @@ setInterval(() => {
     contador++;
     
        ReactDOM.render(
-         <SimpleCounter digitoUno={uno} digitoDos={dos} digitoTres={tres} digitoCuatro={cuatro} />, document.getElementById('app')) 
+         <SimpleCounter digitoUno={uno} digitoDos={dos} digitoTres={tres} digitoCuatro={cuatro} digitoCinco={cinco} digitoSeis={seis} />, document.getElementById('app')) 
   
-}, 1000);
+}, 100000);
